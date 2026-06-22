@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="app-container">
+    <header class="navbar">
+        <h1 class="app-title">&#9925; Weather App</h1>
+    </header>
+    <div class="search-row">
+        <input type="text" id="city-input" class="search-input" placeholder="Enter city name..." />
+        <button id="search-button" class="search-button">Search</button>
+        <button id="unit-toggle" class="unit-toggle">°F</button>
+    </div>
+
+    <div id="history-container" class="history-container"></div>
+    
+    <main class="main-content">
+        
+        <!--Error message-->
+        <div id="error-box" class="error-box hidden">
+            City not found. Please check the spelling and try again.
+        </div>
+        
+        <!--Loading message-->
+        <div id="loading-box" class="loading-box hidden">
+            Loading...
+        </div>
+        
+        <!--Weather card-->
+        <section id="weather-card" class="weather-card hidden">
+            
+            <!--Hero: icon, city, temperature, description-->
+            <section class="hero-section">
+                <div id="weather-icon" class="weather-icon">☀️</div>
+                <div id="city-name" class="city-name">--</div>
+                <div id="temperature" class="temperature">---°C</div>
+                <div id="weather-desc" class="weather-desc">---</div>
+            </section>
+            
+            <!--Starts row: humidity, wind, UV index-->
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-label">Humidity</div>
+                    <div id="humidity" class="stat-value">--%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Wind</div>
+                    <div id="wind-speed" class="stat-value">-- km/h</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">UV Index</div>
+                    <div id="uv-index" class="stat-value">--</div>
+                </div>
+            </div>   
+                <!--5 day forecast-->
+                <section class="forecast-section">
+                <div class="forecast-title">5-DAY FORECAST</div>
+                <div id="forecast-list" class="forecast-list">
+                    
+                    <!-- Rows added by JavaScript -->
+                </div>
+            </section>
+        </section>
+    </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
